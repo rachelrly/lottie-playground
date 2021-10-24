@@ -10,6 +10,7 @@ export default function Loading() {
 
   async function getBlogPosts() {
     const posts = await getMediumArticles();
+    console.log("Fetched these posts", posts);
     setBlogPosts(posts);
   }
 
