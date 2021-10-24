@@ -1,22 +1,8 @@
 import Head from "next/head";
-import loadingAnimation from "./loading.json";
 import styles from "../styles/Home.module.css";
-import { useEffect, useRef } from "react";
-import Lottie from "lottie-react-web";
+import Link from "next/link";
 
 export default function Home() {
-  const animationRef = useRef(null);
-
-  // useEffect(() => {
-  //  let animation = Lottie.loadAnimation({
-  //     container: animationRef,
-  //     renderer: "svg",
-  //     loop: "true",
-  //     autoplay: true,
-  //     animationData: loadingAnimation,
-  //   });
-  // }, []);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -27,12 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Lottie Playground</h1>
-        <Lottie
-          options={{
-            animationData: loadingAnimation,
-            loop: true,
-          }}
-        />
+        <Link href="/loading">Loading animation</Link>
       </main>
 
       <footer className={styles.footer}>
