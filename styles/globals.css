@@ -9,8 +9,23 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  width: "100%";
+  display: "flex";
+  justify-content: "center";
 }
 
 * {
   box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  display: block;
+  text-align: center;
 }
