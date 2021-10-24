@@ -9,15 +9,12 @@ export default function Loading() {
   const [blogPosts, setBlogPosts] = useState([]);
 
   async function getBlogPosts() {
-    console.log("FETCHING POSTS NOW");
     const posts = await getMediumArticles();
-    console.log("Fetched these posts", posts);
     setBlogPosts(posts);
   }
 
   useEffect(() => {
-    if (blogPosts === []) {
-      console.log("NO POSTS, FETCHING");
+    if (!blogPosts.length) {
       getBlogPosts();
     }
   }, [blogPosts]);
