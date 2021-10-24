@@ -1,4 +1,9 @@
-export default function BlogPost({ children, title, link, date }) {
+export default function BlogPost({
+  children,
+  title = "",
+  link = { title: "", href: "" },
+  date = "",
+}) {
   const linkToPost = link.title.toUpperCase();
   return (
     <section>
