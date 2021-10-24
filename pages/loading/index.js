@@ -6,18 +6,16 @@ import BlogPost from "./BlogPost";
 import Lottie from "lottie-react-web";
 
 export default function Loading() {
-  const [loading, setLoading] = useState(true);
   const [blogPosts, setBlogPosts] = useState([]);
 
   async function getBlogPosts() {
     const posts = await getMediumArticles();
     setBlogPosts(posts);
-    setLoading(false);
   }
 
   useEffect(() => {
     if (blogPosts === []) getBlogPosts();
-  }, [blogPosts, loading]);
+  }, [blogPosts]);
 
   return (
     <div className={styles.container}>
@@ -29,7 +27,7 @@ export default function Loading() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Loading Animation</h1>
-        {loading ? (
+        {!blogPosts.length ? (
           <Lottie
             options={{
               animationData: loadingAnimation,
