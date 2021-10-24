@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import Lottie from "lottie-react-web";
+import Lottie from "lottie-react";
 import checkAnimation from "../lottie/check.json";
 
 export default function Home() {
@@ -15,12 +15,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Lottie Playground</h1>
-        <Lottie
-          options={{
-            animationData: checkAnimation,
-            loop: true,
-          }}
-        />
+        <Lottie animationData={checkAnimation} />
         <Link href="/loading">View loading animation</Link>
       </main>
 

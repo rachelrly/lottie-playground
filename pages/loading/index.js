@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import loadingAnimation from "../../lottie/loading.json";
 import styles from "../../styles/Home.module.css";
 import BlogPost from "./BlogPost";
-import Lottie from "lottie-react-web";
+import Lottie from "lottie-react";
 
 export default function Loading() {
   const [blogPosts, setBlogPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const lottieRef = useRef(null);
 
   async function getBlogPosts() {
     const posts = await getMediumArticles();
@@ -14,10 +16,14 @@ export default function Loading() {
   }
 
   useEffect(() => {
-    if (!blogPosts.length) {
+    if (!blogPosts?.length) {
       getBlogPosts();
     }
   }, [blogPosts]);
+
+  function stopLoading() {
+    setLoading(false);
+  }
 
   return (
     <div className={styles.container}>
@@ -29,12 +35,11 @@ export default function Loading() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Loading Animation</h1>
-        {!blogPosts.length ? (
+        {loading ? (
           <Lottie
-            options={{
-              animationData: loadingAnimation,
-              loop: true,
-            }}
+            lottieRef={lottieRef}
+            animationData={loadingAnimation}
+            onLoopComplete={stopLoading}
           />
         ) : (
           blogPosts.map((post) => <BlogPost {...post} key={post.datePosted} />)
