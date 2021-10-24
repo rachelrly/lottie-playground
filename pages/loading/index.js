@@ -22,7 +22,7 @@ export default function Loading() {
   }, [blogPosts]);
 
   function stopLoading() {
-    setLoading(false);
+    if (blogPosts?.length) setLoading(false);
   }
 
   return (
