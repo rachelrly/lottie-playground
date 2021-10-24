@@ -9,15 +9,15 @@ export default function Loading() {
   const [loading, setLoading] = useState(true);
   const [blogPosts, setBlogPosts] = useState([]);
 
-  useEffect(() => {
-    if (blogPosts === []) getBlogPosts();
-  }, [blogPosts]);
-
   async function getBlogPosts() {
     const posts = await getMediumArticles();
     setBlogPosts(posts);
     setLoading(false);
   }
+
+  useEffect(() => {
+    if (blogPosts === []) getBlogPosts();
+  }, [blogPosts, loading]);
 
   return (
     <div className={styles.container}>

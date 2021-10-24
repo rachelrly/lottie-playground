@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Lottie Playground</h1>
-        <Link href="/loading">Loading animation</Link>
+        <Link href="/loading">View loading animation</Link>
       </main>
 
       <footer className={styles.footer}>
