@@ -34,7 +34,6 @@ export default function Loading() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Loading Animation</h1>
         {loading ? (
           <Lottie
             lottieRef={lottieRef}
