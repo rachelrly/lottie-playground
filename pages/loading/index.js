@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import loadingAnimation from "../../lottie/layer.json";
+import loadingAnimation from "../../lottie/wave.json";
 import styles from "../../styles/Home.module.css";
 import BlogPost from "./BlogPost";
 import Lottie from "lottie-react";

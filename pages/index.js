@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import Lottie from "lottie-react";
-import checkAnimation from "../lottie/check.json";
+import checkAnimation from "../lottie/blob.json";
 
 export default function Home() {
   return (
@@ -18,13 +18,14 @@ export default function Home() {
         <Lottie animationData={checkAnimation} />
         <Link href="/loading">View loading animation</Link>
       </main>
-
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://github.com/rachelrly"
           target="_blank"
           rel="noopener noreferrer"
-        ></a>
+        >
+          Created by Rachel Reilly
+        </a>
       </footer>
     </div>
   );

@@ -8,10 +8,17 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
   width: "100%";
   display: "flex";
   justify-content: "center";
+}
+
+a:hover {
+  color: #b49e43;
+}
+
+a:active {
+  color: #bb2d26;
 }
 
 * {
